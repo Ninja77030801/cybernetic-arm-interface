@@ -2,7 +2,7 @@
   "name": "cybernetic-arm-interface",
   "version": "0.1.0",
   "homepage": ".",
-  "main": "main.js",
+  "main": "build/electron.js",
   "private": true,
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
@@ -13,8 +13,6 @@
     "@types/node": "^16.18.126",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "electron": "^41.3.0",
-    "electron-build": "^0.0.3",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
     "react-scripts": "5.0.1",
@@ -22,12 +20,35 @@
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
+  "devDependencies": {
+    "electron": "^41.3.0",
+    "electron-builder": "^26.8.1"
+  },
   "scripts": {
     "electron:start": "electron .",
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "electron:build": "electron-builder",
+    "build": "BUILD_PATH=dist-react react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
+  },
+  "build": {
+    "files": [
+      "build/**/*",
+      "package.json",
+      "build/electron.js"
+    ],
+    "appId": "com.ninja77030.cyberneticarm",
+    "mac": {
+      "target": "dmg"
+    },
+    "win": {
+      "target": "exe"
+    },
+    "linux": {
+      "target": ["AppImage", "deb"],
+      "category": "utility"
+    }
   },
   "eslintConfig": {
     "extends": [
