@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowUp, faArrowDown, faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { useState, useRef } from 'react';
 import client from './services/client'
 import './App.css';
@@ -22,10 +24,10 @@ function App() {
         <p style={{color: "red"}}>{errorMessage}</p>
       </header>
       <div className="control-panel">
-          <button onClick={() => sendDirection('w')}>Up</button>
-          <button onClick={() => sendDirection('a')}>Left</button>
-          <button onClick={() => sendDirection('s')}>Down</button>
-          <button onClick={() => sendDirection('d')}>Right</button>
+          <button onClick={() => sendDirection('w')}><FontAwesomeIcon icon={faArrowUp} /></button>
+          <button onClick={() => sendDirection('a')}><FontAwesomeIcon icon={faArrowLeft} /></button>
+          <button onClick={() => sendDirection('s')}><FontAwesomeIcon icon={faArrowDown} /></button>
+          <button onClick={() => sendDirection('d')}><FontAwesomeIcon icon={faArrowRight} /></button>
       </div>
     </div>
   );
