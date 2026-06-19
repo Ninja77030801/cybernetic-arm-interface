@@ -8,7 +8,8 @@ const createWindow = () => {
             nodeIntegration: true
         }
     })
-    win.loadFile('../dist-react/index.html')
+    win.loadFile('./dist-react/index.html')
+
 }
 
 app.on('ready', createWindow)

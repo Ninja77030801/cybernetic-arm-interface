@@ -1,5 +1,9 @@
 {
   "name": "cybernetic-arm-interface",
+  "author": {
+    "name": "Ninja77030",
+    "email": "n77030@outlook.com"
+  },
   "version": "0.1.0",
   "homepage": ".",
   "main": "build/electron.js",
@@ -30,7 +34,7 @@
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
-    "electron": "^41.3.0",
+    "electron": "^42.4.1",
     "electron-builder": "^26.8.1"
   },
   "scripts": {
@@ -42,6 +46,7 @@
     "eject": "react-scripts eject"
   },
   "build": {
+    "productName": "Cybernetic Arm Interface",
     "files": [
       "dist-react/**/*",
       "package.json",
@@ -57,7 +62,8 @@
     "linux": {
       "target": [
         "AppImage",
-        "deb"
+        "deb",
+        "pacman"
       ],
       "category": "utility"
     }
