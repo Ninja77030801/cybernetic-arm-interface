@@ -29,6 +29,16 @@ function App() {
           <button onClick={() => sendDirection('s')}><FontAwesomeIcon icon={faArrowDown} /></button>
           <button onClick={() => sendDirection('d')}><FontAwesomeIcon icon={faArrowRight} /></button>
       </div>
+      <div className="side-controls">
+        <div className="side-pair left-pair">
+          <button className="side-button" onClick={() => sendDirection('k')}>Elbow ↑</button>
+          <button className="side-button" onClick={() => sendDirection('i')}>Elbow ↓</button>
+        </div>
+        <div className="side-pair right-pair">
+          <button className="side-button" onClick={() => sendDirection('o')}>Gripper ↑</button>
+          <button className="side-button" onClick={() => sendDirection('c')}>Gripper ↓</button>
+        </div>
+      </div>
     </div>
   );
 }

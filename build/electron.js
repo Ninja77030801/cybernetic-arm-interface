@@ -8,7 +8,8 @@ const createWindow = () => {
             nodeIntegration: true
         }
     })
-    win.loadFile('./dist-react/index.html')
+    win.loadURL('http://localhost:3000')
+    //win.loadFile('./dist-react/index.html')
 
 }
 
